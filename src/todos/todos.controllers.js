@@ -45,9 +45,10 @@ const updateToDo = (todoObj, id) => {
     const index = todosDB.findIndex(todo => todo.id === id);
     if (index !== -1) {
         todosDB[index] = {
-            id,
-            title: todoObj.title,
-            description: todoObj.description,
+            ...todosDB[index],
+            // id,
+            // title: todoObj.title,
+            // description: todoObj.description,
             completed: todoObj.completed,
         };
         return todosDB[index];
